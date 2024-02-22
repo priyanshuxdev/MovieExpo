@@ -1,0 +1,24 @@
+/* Customize the scrollbar */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #313030;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #474646;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.overlay {
+  background: linear-gradient(360deg, rgba(0, 0, 0, 1), transparent);
+}

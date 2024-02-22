@@ -1,0 +1,8 @@
+.media-scroller {
+  display: grid;
+  grid-auto-flow: column;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-snap-align: start;
+  margin: 1.2rem;
+}

@@ -2,3 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #000000;
+}
+
+/* .carasoul-container {
+    height: 120rem;
+    width: 90rem;
+    display: block;
+    margin: auto;
+    padding-top: 3rem;
+} */
+
+.parent {
+  position: relative;
+  height: 95vh;
+}
+
+.desc__overlay {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding-bottom: 2rem;
+  left: 0;
+  color: #fff;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 2), transparent);
+}
