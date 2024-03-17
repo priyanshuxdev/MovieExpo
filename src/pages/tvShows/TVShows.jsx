@@ -1,43 +1,44 @@
 import React, { useEffect, useState } from "react";
-import MovieCard from "../movieCard/MovieCard";
-import Pagination from "../pagination/Pagination";
+import MovieCard from "../../components/movieCard/MovieCard";
+import Pagination from "../../components/pagination/Pagination";
 import axios from "axios";
 const apiKey = import.meta.env.VITE_API_KEY;
 
 function Movies() {
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState([]);
+  const [tvShows, setTvShows] = useState([]);
   let totalPages;
 
-  const getMovies = async () => {
+  const getTvShows = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en-US&page=${page}&sort_by=popularity.desc`
+      `https://api.themoviedb.org/3/discover/tv?api_key=${apiKey}&language=en-US&page=${page}&sort_by=popularity.desc`
     );
     totalPages = response.data.total_pages;
-    setMovies(response.data.results);
+    console.log(response.data.results);
+    setTvShows(response.data.results);
   };
 
   useEffect(() => {
-    getMovies();
+    getTvShows();
   }, []);
 
   function handleClick() {
     setPage(page + 1);
-    getMovies();
+    getTvShows();
   }
 
   return (
-    <div className="mb-28 sm:mb-16">
+    <div className="mb-28 file:sm:mb-16">
       <h1 className="text-5xl pt-9 sm:pt-[6.4rem] text-center text-white mb-9">
-        Movies
+        TV Shows
       </h1>
       <div className="flex flex-wrap gap-4 justify-center">
-        {movies.length > 0 &&
-          movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+        {tvShows.length > 0 &&
+          tvShows.map((tvShow) => <MovieCard movie={tvShow} key={tvShow.id} />)}
       </div>
 
       <Pagination
-        movie={movies}
+        movie={tvShows}
         totalPages={500 || totalPages}
         handleClick={handleClick}
       />

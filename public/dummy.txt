@@ -1,0 +1,17 @@
+className="text-gray-300 text-[14px] mr-4 sm:text-2xl sm:w-9/12 mb-32"
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [movies, setMovies] = useState([]);
+  const { query } = useParams();
+
+  const searchMovies = async (title) => {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`
+    );
+    console.log(response.data.results);
+    setMovies(response.data.results);
+  };
+
+  useEffect(() => {
+    searchMovies(searchTerm);
+  }, [searchTerm]);

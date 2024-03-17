@@ -1,13 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 export default function useGetMovie(category) {
   const [movies, setMovies] = useState([]);
 
   const getMovies = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/${category}?api_key=26e3e05038f7c7fba84c95e39979032d`
+      `https://api.themoviedb.org/3/${category}?api_key=${apiKey}&language=en-US&page=1&sort_by=popularity.desc`
     );
+    console.log(response.data.total_pages);
     setMovies(response.data.results);
   };
 
@@ -15,6 +18,6 @@ export default function useGetMovie(category) {
     getMovies();
   }, []);
 
-  console.log(movies);
+  // console.log(movies);
   return movies;
 }

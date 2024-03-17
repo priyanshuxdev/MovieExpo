@@ -9,8 +9,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:mediaType/:id" element={<MovieDetails />} />
-        <Route path="/search/:query" element={<Search />} />
+        <Route path="/:mediatype/:id" element={<MovieDetails />} />
+        <Route path="/search" element={<Search />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/tvshows" element={<TVShows />} />
       </Routes>

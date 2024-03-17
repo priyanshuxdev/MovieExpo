@@ -13,7 +13,7 @@ const Navbar = () => {
       <nav className="gradient w-full py-5 shadow-2xl top-0 left-0 hidden items-center justify-around z-10 fixed sm:flex">
         <div>
           <Link to="/">
-            <h1 className="text-5xl text-bold text-white">MovieExpo</h1>
+            <h1 className="text-5xl text-bold text-white">Moviexpo</h1>
           </Link>
         </div>
 
