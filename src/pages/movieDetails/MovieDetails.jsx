@@ -9,8 +9,8 @@ import Cast from "./cast/Cast";
 
 const MovieDetails = () => {
   const { id } = useParams();
-  const detail = useMovieDetail(`/movie/${id}`);
-  const cast = useMovieDetail(`/movie/${id}/credits`);
+  const detail = useMovieDetail(`movie/${id}`);
+  const cast = useMovieDetail(`movie/${id}/credits`);
 
   return (
     <>

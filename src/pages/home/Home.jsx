@@ -17,6 +17,7 @@ function Home() {
   const trendingMovie = useGetMovie("trending/movie/day");
   const trendingTv = useGetMovie("trending/tv/day");
 
+
   return (
     <div className="mb-24">
       <div className="p-3 md:p-0">
